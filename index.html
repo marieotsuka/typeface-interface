@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Typeface as Interface</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/slides.css">
+  <link rel="icon"type="image/svg"href="../../assets/favicon.svg">
+  <script src="slides.js"></script>
+</head>
+<body class="layout-slides">
+  <main>
+    <section class="slide divider">
+      <div class="text">
+        <h1>Typeface as Interface</h1>
+        <figcaption>March 4, 2024 / Graduate Type Design</figcaption>
+      </div>
+    </section>
+
+<!-- 
+    <section class="slide divider">
+      <div class="text">
+        <h2>Typographic Flexibility</h2>
+        <p>
+          Variable fonts offer new ways to expand and refine typography.
+        </p>
+      </div>
+    </section> -->
+
+    <section class="slide divider">
+       <div class="text">
+          <h2>Making Variable Fonts</h2>
+       </div>
+    </section>
+
+    <section class="slide">
+      <div class="text">
+        <h2>Materials & Tools</h2>
+        <div class="cols">
+          <div class="col2">
+            <ul>
+              <li>Ink</li>
+              <li>Metal</li>
+              <li>Wood</li>
+              <li>Photo</li>
+              <li>Pixels</li>
+              <li>Vectors</li>
+            </ul>
+          </div>
+          <div class="col2">
+            <ul>
+              <li>Pen</li>
+              <li>Punch-cut metal type</li>
+              <li>Woodblock letters</li>
+              <li>Phototypesetting</li>
+              <li>Digital screen</li>
+              <li>Digital programs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+   </section>
+
+  <section class="slide">
+    <div class="text">
+     <figure>
+       <div class="cols">
+         <div class="col2">      
+           <img src="img/IF2.gif" class="wideimg">            
+         </div>
+         <div class="col2">
+            <img src="img/fig3-2-2.gif" class="wideimg">
+         </div>
+       </div>
+       <figcaption>Rasterization Illustrations in the <a href="https://developer.apple.com/fonts/TrueType-Reference-Manual/RM03/Chap3.html">Apple Developer Manual</a>
+       </figcaption>
+     </figure>
+   </div>
+  </section> 
+
+  <section class="slide">
+    <div class="text">
+      <table>
+        <tr><th>year</th><th>device</th><th>ppi</th></tr>
+         <tr><td>2023</td><td>iPhone 14</td><td>460</td>
+        <tr><td>2023</td><td>Apple Watch </td><td>326</td>
+        <tr><td>2021</td><td>Macbook Pro Retina</td><td>254</td> 
+        <tr><td>2019</td><td>Pro Display XDR</td><td>218</td>
+        <tr><td>2012</td><td>Macbook</td><td>72</td>
+      </table>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="text">
+      <div class="vector">
+        <div class="label">A</div>
+        <div class="endpoint"></div>
+        <div class="line"><div class="linemove animate" style="animation-play-state: running;"></div></div>
+        <div class="endpoint"></div>
+        <div class="label">B</div>
+      </div>
+      <figcaption>A vector is a geometric object that has magnitude (or length) and direction</figcaption>
+    </div>
+  </section>
+
+  <section class="slide divider">
+     <div class="text">
+        <p>“[Drawing vectors is like] getting a feeling for a piece of math. What you’re doing is basically creating instructions for a piece of software to draw a line. It’s almost like choreography. It may not feel that way, but at the bottom of it it really is, because it’s a function of time.”</p>
+        <figcaption>—Jürg Lehni</figcaption>
+     </div>
+  </section>
+
+  <section class="slide">
+    <div class="text">
+      <figure>
+         <img class="pad" src="img/Bezier_All_anim.gif">
+         <figcaption>Animated Bezier Vectors <a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve#/media/File:B%C3%A9zier_1_big.gif" class="source">Wikimedia Commons</a></figcaption>
+      </figure>
+    </div>
+  </section>
+   <!-- <h2>Digital letterforms are made of mathematical<br> equations, as functions of time</h2> -->
+
+   <section class="slide">
+     <figure class="interpolation">
+        <div class="cols">
+         <div class="magmatic interp" style="--wdth: 50; --wght: 100">H</div>
+         <div class="arrow"><span class="leftarrow"> </span></div>
+         <div class="magmatic interp" style="--wdth: 100; --wght: 400"></div>
+         <div class="arrow"><span class="rightarrow"> </span></div>
+         <div class="magmatic interp" style="--wdth: 150; --wght: 900">H</div>
+        </div>
+     </figure>
+   </section>
+
+   <section class="slide">
+     <figure class="interpolation">
+       <div class="cols">
+         <div class="magmatic interp" style="--wdth: 50; --wght: 100">H</div>
+         <div class="arrow"><span class="leftarrow">→</span></div>
+         <div class="magmatic interp" style="--wdth: 100; --wght: 400">H</div>
+         <div class="arrow"><span class="rightarrow">←</span></div>
+         <div class="magmatic interp" style="--wdth: 150; --wght: 900">H</div>
+       </div>
+     </figure>
+   </section>
+
+   <section class="slide">
+    <div class="text">
+       <figure class="full">
+         <img src="img/magmatic-interpolation.png" class="wide-img">
+         <figcaption>Master Compatibility view of outlines</figcaption>
+       </figure>
+    </div>
+   </section>
+
+   <section class="slide">
+     <h1 class="magmatic maganimate animate" style="font-size: 300px;">H</h1>
+   </section>
+
+   <section class="slide">
+     <h1 class="magmatic mag-wdth-animate animate" style="font-size: 300px;">H</h1>
+   </section>
+
+   <section class="slide">
+    <div class="text">
+     <figure>
+       <table>
+       <thead>
+       <tr>
+       <th>Axis Tag</th>
+       <th>Description</th>
+       <th>Valid Range</th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr>
+       <td>wght</td>
+       <td>weight</td>
+       <td>1—1000</td>
+       </tr>
+       <tr>
+       <td>wdth</td>
+       <td>width</td>
+       <td>>0, percent of normal width</td>
+       </tr>
+       <tr>
+       <td>opsz</td>
+       <td>optical sizing</td>
+       <td>>0, point sizes</td>
+       </tr>
+       <tr>
+       <td>ital</td>
+       <td>italicization</td>
+       <td>0—1</td>
+       </tr>
+       <tr>
+       <td>slnt</td>
+       <td>slant</td>
+       <td>-90—90</td>
+       </tr>
+       </tbody>
+       </table>
+       <figcaption>Standard Axes for Open Type 1.8</figcaption>
+     </figure>
+    </div>
+   </section>
+
+   <section class="slide">
+     <figure>
+       <img src="img/univers-typeface.jpeg">
+       <figcaption>Adrian Frutiger’s Univers Type Family, 1957</figcaption>
+     </figure>
+   </section>
+
+   <section class="slide">
+     <figure>
+       <img src="img/apple-styleguide.png">
+       <figcaption>Tracking guidelines for iOS, <a href="https://developer.apple.com/design/human-interface-guidelines/typography" target="_blank">Apple’s Style Guide</a></figcaption>
+     </figure>
+   </section>
+
+   <section class="slide divider">
+      <div class="text">
+         <p>“Variable fonts blur the line between<br> the type maker and type user”</p>
+         <figcaption>—DJR <a href="https://vimeo.com/251494096" class="source">Talk: “We Are Family! I’ve Got All My Variations With Me”</a></figcaption>
+      </div>
+   </section>
+
+
+   <section class="slide divider">
+      <div class="text">
+         <h2>Using Variable Fonts</h2>
+      </div>
+   </section>
+
+   <section class="slide">
+     <div class="text">
+     <figure>
+       <img src="img/occ-nav.png">
+       <figcaption>Device flexibility, navigation menu for Occupant Fonts <a href="https://occupantfonts.com/" target="_blank" class="source">Site</a></figcaption>
+     </figure>
+     </div>
+   </section>
+
+
+   <section class="slide">
+     <div class="text">
+     <figure>
+       <img src="img/oav-amazon.png">
+       <figcaption>Only A Voice book cover</figcaption>
+     </figure>
+     </div>
+   </section>
+
+   <section class="slide">
+     <div class="text">
+     <figure>
+       <video src="img/textlab_sr.mp4" muted loop></video>
+       <figcaption>A customizable e-reader with variable weight axis <a href="https://textlab.occupantfonts.com/" target="_blank" class="source">Site</a></figcaption>
+     </figure>
+     </div>
+   </section>
+
+   <section class="slide">
+     <div class="text">
+     <figure>
+       <video src="img/animals_sr.mp4" muted loop></video>
+       <figcaption>Harmonizing with other scripts and fonts <a href="https://alphabetzoo.occupantfonts.com/" target="_blank" class="source">Site</a></figcaption>
+     </figure>
+     </div>
+   </section>
+
+   <section class="slide">
+     <div class="text">
+     <figure>
+       <img src="img/panera_uses.png">
+       <figcaption>Sample uses of Start Script for Panera, by Victoria Rushton</figcaption>
+     </figure>
+     </div>
+   </section>
+
+   <section class="slide">
+     <div class="text">
+     <figure class="wide">
+        <video src="img/fresh.mp4" muted loop></video>
+       <figcaption>An optical size axis for various media</figcaption>
+     </figure>
+     </div>
+   </section>
+
+   <section class="slide">
+     <div class="text">
+     <figure class="wide">
+       <img class="pad" src="img/panera_underline.gif">
+       <figcaption>A variable “underline” glyph for pairing, with 2 stylistic alternates</figcaption>
+     </figure>
+     </div>
+   </section>
+
+   <section class="slide">
+     <div class="text">
+     <figure>
+       <img src="img/panera_uses.png">
+       <figcaption>Sample uses of Start Script for Panera, by Victoria Rushton</figcaption>
+     </figure>
+     </div>
+   </section>
+
+   <section class="slide">
+     <div class="text">
+     <figure>
+       <video src="img/flex.mp4" muted loop></video>
+       <figcaption>Parametrization of a design <a href="https://fonts.google.com/specimen/Roboto+Flex" target="_blank" class="source">Site</a> </figcaption>
+     </figure>
+     </div>
+   </section>
+
+   <section class="slide">
+     <div class="text">
+     <figure>
+       <video src="img/risd.mp4" muted loop></video>
+       <figcaption>Custom stencil font for Rhode Island School of Design, by Ryan Bugden <a href="https://identity.risd.edu/how-we-look" target="_blank" class="source">Source</a></figcaption>
+     </figure>
+     </div>
+   </section>
+
+   <section class="slide">
+     <div class="text">
+     <figure>
+       <video src="img/sfsymphony.webm" muted loop></video>
+       <figcaption>SF Symphony Branding, by COLLINS<a href="https://www.wearecollins.com/work/sf-symphony/" target="_blank" class="source">Source</a></figcaption>
+     </figure>
+     </div>
+   </section>
+
+   <section class="slide">
+     <figure>
+       <video src="img/chee-variable.mp4" muted autoplay loop></video>
+       <figcaption>Chee Variable by Ohno Type, James Edmonson</figcaption>
+     </figure>
+   </section>
+
+   <section class="slide divider">
+     <div class="text">
+       <p>Variable font formats provide a new way to select a font style—<br>a slider replacing a dropdown menu. But the true advantage with the format is the ability to <em>programmatically</em> specify a precise point in a design space.
+       </p>
+     </div>
+   </section>
+
+   <section class="slide">
+     <div class="text">
+       <figure>
+         <video src="img/mantar-load.mp4" muted loop></video>
+         <figcaption>Mantar Minisite, by typeface and website designed by Cem Eskinazi & developed by Nic Schumann <a href="https://mantar.occupantfonts.com/" target="_blank" class="source">Site</a></figcaption>
+       </figure>
+     </div>
+   </section>
+
+   <section class="slide divider">
+      <div class="text">
+         <p>Fonts live as data</p>
+      </div>
+   </section>
+
+   <section class="slide">
+     <div class="text">
+       <figure>
+         <video src="img/metaflop.mp4" muted loop></video>
+         <figcaption>Metaflop modulator, based parameters of Donald Knuth’s Metafont<a href="https://www.metaflop.com/modulator" target="_blank" class="source">Site</a></figcaption>
+       </figure>
+     </div>
+   </section>
+
+<!--     <section class="slide divider">
+      <div class="text">
+        <h2>Data for programmed variation</h2>
+      </div>
+    </section> -->
+      
+    <section class="slide">
+      <div class="text">
+      <figure>
+        <video src="img/beowolf.mp4" muted loop></video>
+        <figcaption>FF Beowulf by Letterror (Just van Rossum and Erik van Blokland,) 1990 <a href="https://www.moma.org/collection/works/139326" target="_blank" class="source">Source</a></figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="text">
+      <figure>
+        <img src="img/twincities.jpg">
+        <figcaption>Announcement for a panel on the typeface Twin, Designed by Letterror, 2002</figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="text">
+        <div class="cols">
+          <div class="col2">
+            <figure>
+              <video src="img/bai.mp4" muted loop></video>
+              <figcaption>Custom Font for Brown Arts Institue, Movements <a href="https://www.movementsjournal.art/" target="_blank" class="source">Site</a></figcaption>
+            </figure>
+          </div>
+          <div class="col2">
+            <figure>
+              <img src="img/The_Lindemann_Performing_Arts_Center_at_Brown_University.jpg">
+              <figcaption>Lindemann Performing Arts Center <a href="https://en.wikipedia.org/wiki/Lindemann_Performing_Arts_Center#/media/File:The_Lindemann_Performing_Arts_Center_at_Brown_University.jpg" target="_blank" class="source">Source</a></figcaption>
+            </figure>
+          </div>
+        </div>
+    </section>
+
+    <section class="slide">
+      <div class="text">
+        <figure>
+          <img src="img/bai-use.png">
+          <figcaption>Slant axis responds to the time of day in Providence <a href="https://www.movementsjournal.art/" target="_blank" class="source">Site</a></figcaption>
+        </figure>
+      </div>
+    </section>
+
+
+    <section class="slide">
+      <div class="text">
+        <figure>
+          <video src="img/climate.mp4" muted loop></video>
+          <figcaption>Climate Crisis Font, by Helsingin Sanomat <a href="https://kampanjat.hs.fi/climatefont/" target="_blank" class="source">Site</a></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="text">
+      <figure>
+        <video src="img/typephase.mp4" muted loop></video>
+        <figcaption>Type Phase, by Elias Hanzer <a href="https://www.eliashanzer.com/phase/" target="_blank" class="source">Site</a></figcaption>
+      </figure>
+      </div>
+    </section>  
+
+    <section class="slide">
+      <div class="text">
+      <figure>
+        <video src="img/kachi-buwa.mp4" muted controls loop></video>
+        <figcaption>Kachi Buwa Variable Font, by Emi Takahashi <a href="https://www.kachibuwa.com/" target="_blank" class="source">Site</a></figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="text">
+      <figure>
+        <img src="img/wind-variable-demo-edited.gif">
+        <figcaption>Wind Variable by Hansje van Halem <a href="https://www.typotheque.com/fonts/wind" target="_blank" class="source">Source</a></figcaption>
+      </figure>
+      </div>
+    </section>   
+
+    <section class="slide">
+      <div class="text">
+      <figure>
+        <video src="img/ra.mp4" muted loop></video>
+        <figcaption>Radio Amnion, for Jol Thoms, with Minkyoung Kim <a href="https://radioamnion.net/" target="_blank" class="source">Site</a></figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="text">
+      <figure>
+        <video src="img/moonvf.mp4" muted loop></video>
+        <figcaption>A moonphase variable font</figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="text">
+      <figure>
+        <video src="img/pentad_sr.mp4" muted loop></video>
+        <figcaption>Seasons in Pentameter, with Laurel Schwulst<a href="https://pentad.world/" target="_blank" class="source">Site</a></figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="text">
+      <figure>
+        <video src="img/trekker_sr.mp4" muted loop></video>
+        <figcaption>Trekker/Browser by Tiger Dingsun <a href="https://trekker.occupantfonts.com/" target="_blank" class="source">Site</a></figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="text">
+      <figure>
+        <video src="img/webtype.mp4" muted loop></video>
+        <figcaption>Student Work from the class Web Type <a href="https://vf.webtype.xyz/" target="_blank" class="source">Site</a></figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="text">
+      <figure>
+        <video src="img/choreo_sr.mp4" muted loop></video>
+        <figcaption>Choreo by Dan Luo <a href="https://dluo01.github.io/danluo-web-type/variable-font/index.html" target="_blank" class="source">Site</a></figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="slide divider">
+      <div class="text">
+        <p>Custom axes allow the type designer to define<br>
+        a functional or semantic purpose to formal variation — which can then programmatically respond to any kind of input</p>
+      </div>
+    </section>
+
+    <section class="slide divider">
+      <div class="text">
+        <h2>“Technology is the active human interface<br>with the material world”</h2>
+        <figcaption>—Ursula Le Guin, “A rant about ‘technology’” <a href="https://www.ursulakleguin.com/a-rant-about-technology" class="source" target="_blank">Essay</a></figcaption>
+      </div>
+    </section>
+
+<!--     <section class="slide">
+      <div class="text">
+        <a href="https://variable.occupantfonts.com/">Occupant Fonts Variable Font Guide</a>
+      </div>
+    </section> -->
+  </main>
+</body>
+</html>
