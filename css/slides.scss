@@ -55,7 +55,7 @@ h2, h3, h4{
 }
 p, li{
   --wght: 300;
-  margin: 0;
+  margin: 0 auto;
   font-size: var(--size-base);
   max-width: 30em;
   letter-spacing: 0.02em;
@@ -116,6 +116,7 @@ iframe{
   font-size: var(--size-xsmall);
   padding-left: 1em;
   border: none;
+  text-decoration: underline;
 }
 .text-column{
   text-align: left;
